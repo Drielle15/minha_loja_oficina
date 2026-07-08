@@ -1,0 +1,212 @@
+/* IMPORTANDO UMA FONTE MAIS MODERNA (Montserrat para títulos/botões e Inter para textos) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Fonte padrão mais limpa e legível */
+    transition: all 0.3s ease; /* Transições suaves para efeitos de hover */
+}
+
+/* PALETA DE CORES AJUSTADA (Estilo Oficina Mecânica Premium) */
+:root {
+    --bg-principal: #0f172a;   /* Azul escuro/Grafite moderno para o fundo */
+    --bg-cards-container: #1e293b; /* Variação de cinza escuro */
+    --cor-destaque: #213762;     /* Vermelho esportivo para botões e links */
+    --cor-destaque-hover: #000000;
+    --texto-claro: #f8fafc;
+    --texto-escuro: #1e293b;
+    --card-bg: #ffffff;
+}
+
+body {
+    background-color: var(--bg-principal);
+    display: flex;
+    justify-content: center;
+}
+
+/* ESTRUTURA GERAL */
+#geral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Evita que o site estique infinitamente em telas gigantes */
+    background-color: var(--bg-principal);
+    padding: 0 20px;
+}
+
+/* CABEÇALHO */
+#cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+#logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    color: var(--texto-claro);
+}
+
+#logo::after {
+    content: '.';
+    color: var(--cor-destaque); /* Detalhe de ponto vermelho no logo */
+}
+
+/* MENU DE NAVEGAÇÃO */
+#menu ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+}
+
+#menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #94a3b8; /* Cor neutra para links não ativos */
+}
+
+#menu a:hover {
+    color: var(--cor-destaque);
+}
+
+#menu ul img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Deixa o ícone do carrinho branco para contrastar com o fundo */
+}
+
+#menu ul img:hover {
+    transform: scale(1.1);
+}
+
+/* BARRA DE PESQUISA */
+#pesquisa {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#pesquisa input {
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    background-color: var(--bg-cards-container);
+    border: 2px solid #334155;
+    border-radius: 25px; /* Bordas arredondadas modernas style pílula */
+    padding: 0 25px;
+    font-size: 1em;
+    color: var(--texto-claro);
+    outline: none;
+}
+
+#pesquisa input:focus {
+    border-color: var(--cor-destaque);
+}
+
+#pesquisa input::placeholder {
+    font-size: 1em;
+    color: #64748b;
+}
+
+/* GRID DE CARDS */
+#cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Responsivo automático */
+    gap: 25px;
+    padding: 40px;
+    background-color: var(--bg-cards-container);
+    border-radius: 16px; /* Borda arredondada no container dos produtos */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* CARD INDIVIDUAL */
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Levanta o card levemente em vez de descer */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* Impede que as imagens dos produtos fiquem distorcidas */
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #475569;
+    height: 45px; /* Mantém o alinhamento mesmo com textos maiores */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    color: var(--texto-escuro);
+    margin: 15px 0;
+}
+
+.card button.btn-add {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--texto-escuro);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    color: white;
+    cursor: pointer;
+}
+
+.card button.btn-add:hover {
+    background-color: var(--cor-destaque); /* Botão fica vermelho no hover */
+}
+
+/* RODAPÉ */
+#rodape {
+    width: 100%;
+    padding: 60px 20px;
+    color: #64748b;
+    text-align: center;
+}
+
+#rodape h2 {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+#rodape p {
+    font-size: 0.85em;
+}

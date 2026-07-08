@@ -1,0 +1,188 @@
+/* ==========================================================================
+   1. IMPORTAÇÕES & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
+
+
+
+:root {
+    --cor01: #1e293b; /* Grafite escuro moderno */
+    --cor02: #0f172a; /* Preto azulado profundo */
+    --cor03: #f1f5f9; /* Cinza claro limpo para o fundo */
+    --cor04: #fefdfd; /* Vermelho esportivo para destaques */
+    --cor05: #ffffff; /* Branco puro */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.25s ease-in-out;
+}
+
+body {
+    background-color: var(--cor03);
+    display: flex;
+    justify-content: center;
+}
+
+#geral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--cor03);
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO & NAVEGAÇÃO (Corrigindo o contraste oculto)
+   ========================================================================== */
+#cabecalho {
+    background-color: var(--cor01);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 90px;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cor05); /* Texto branco para destacar no fundo escuro */
+}
+
+#logo::after {
+    content: '.';
+    color: var(--cor04);
+}
+
+#menu ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+}
+
+#menu ul img {
+    width: 22px;
+    height: 22px;
+    filter: invert(1); /* Garante que o ícone do carrinho fique branco */
+}
+
+#menu a:link,
+#menu a:visited {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #94a3b8; /* Cinza claro legível */
+}
+
+#menu a:hover,
+#menu a:active {
+    font-size: 0.9em; /* Mantém o tamanho idêntico para o menu não tremer */
+    color: var(--cor04); /* Vermelho no hover */
+}
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO DO FORMULÁRIO (LOGIN / CADASTRO)
+   ========================================================================== */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: var(--cor02);
+    font-size: 2em;
+    margin: 50px 0 20px 0;
+    text-align: center;
+}
+
+/* Centraliza e estiliza a caixinha do formulário */
+#login {
+    background-color: var(--cor05);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px; /* Tamanho perfeito para telas de PC e celular */
+    margin-bottom: 50px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 100%; /* Ocupa toda a largura interna do card de login */
+    height: 44px;
+    padding: 0 15px;
+    margin-top: 6px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    color: var(--cor02);
+    font-size: 0.95em;
+    background-color: #f8fafc;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--cor04);
+    background-color: var(--cor05);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+button {
+    width: 100%;
+    height: 46px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    display: block;
+    margin-top: 25px;
+    background-color: var(--cor02);
+    color: var(--cor05);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cor04); /* Botão fica vermelho ao passar o mouse */
+}
+
+/* ==========================================================================
+   4. RODAPÉ
+   ========================================================================== */
+#rodape {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    background-color: var(--cor01);
+    border-radius: 12px 12px 0 0;
+    color: #64748b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}

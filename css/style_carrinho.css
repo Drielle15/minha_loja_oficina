@@ -1,0 +1,135 @@
+/* ==========================================================================
+   1. IMPORTAÇÕES & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+@import url('css/style_estrutura_pagina.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
+
+:root {
+    --cor01: #1e293b; /* Ajustado para um Grafite Azulado Escuro (Premium) */
+    --cor02: #0f172a; /* Azul Petróleo quase preto para dar profundidade */
+    --cor03: #f1f5f9; /* Um Cinza Claro muito mais limpo e moderno para o fundo */
+    --cor04: #dc2626; /* Vermelho Esportivo para Destaques/Hover */
+    --cor05: #ffffff; /* Branco Puro */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Fonte padrão do site */
+    transition: all 0.25s ease-in-out; /* Transições suaves nos hovers */
+}
+
+body {
+    background-color: var(--cor03);
+    color: var(--cor02);
+}
+
+#geral {
+    width: 100%;
+    max-width: 1200px; /* Evita que o layout quebre ou estique demais em monitores ultra-wide */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO & NAVEGAÇÃO
+   ========================================================================== */
+#cabecalho {
+    width: 100%;
+    height: 90px; /* Reduzido um pouco a altura fixa para ficar mais elegante */
+    background-color: var(--cor01);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    border-radius: 0 0 12px 12px; /* Detalhe moderno: quinas arredondadas na parte de baixo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: var(--cor05);
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+#logo::after {
+    content: '.';
+    color: var(--cor04); /* Pontinho vermelho na logo */
+}
+
+#menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+#menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #94a3b8; /* Cor dos links cinza suave */
+    text-decoration: none;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+#menu a:hover {
+    color: var(--cor04); /* Link acende em vermelho ao passar o mouse */
+}
+
+#menu ul img {
+    width: 22px;
+    height: 22px;
+    filter: invert(0.7); /* Deixa o ícone cinza para combinar com os textos */
+}
+
+#menu ul img:hover {
+    transform: scale(1.1);
+    filter: invert(24%) sepia(91%) saturate(5838%) hue-rotate(352deg) brightness(93%) contrast(93%); /* Carrinho fica vermelho no hover */
+}
+
+/* ==========================================================================
+   3. ELEMENTOS DE TEXTO (H1)
+   ========================================================================== */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    color: var(--cor02);
+    margin: 45px 0 25px 0;
+    font-size: 2em;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================================================
+   4. RODAPÉ (FOOTER)
+   ========================================================================== */
+#rodape {
+    width: 100%;
+    height: auto; /* Troquei altura fixa por padding para não espremer o texto */
+    padding: 40px 20px;
+    background-color: var(--cor01);
+    margin-top: 50px;
+    border-radius: 12px 12px 0 0; /* Arredondado na parte superior */
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#rodape h2 {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--cor05);
+    text-align: center;
+}
+
+#rodape p {
+    font-size: 0.8em;
+    color: #64748b;
+}
