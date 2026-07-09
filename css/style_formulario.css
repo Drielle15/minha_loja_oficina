@@ -1,17 +1,14 @@
-/* ==========================================================================
-   1. IMPORTAÇÕES & CONFIGURAÇÕES GERAIS
-   ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
 
 
 
 :root {
-    --cor01: #1e293b; /* Grafite escuro moderno */
-    --cor02: #0f172a; /* Preto azulado profundo */
-    --cor03: #f1f5f9; /* Cinza claro limpo para o fundo */
-    --cor04: #fefdfd; /* Vermelho esportivo para destaques */
-    --cor05: #ffffff; /* Branco puro */
+    --cor01: #1e293b; 
+    --cor02: #0f172a; 
+    --cor03: #f1f5f9; 
+    --cor04: #fefdfd;
+    --cor05: #ffffff; 
 }
 
 * {
@@ -38,46 +35,38 @@ body {
     padding: 0 20px;
 }
 
-/* ==========================================================================
-   2. CABEÇALHO & NAVEGAÇÃO (Corrigindo o contraste oculto)
-   ========================================================================== */
 #cabecalho {
-    background-color: var(--cor01);
+    background-color: var(--cor02);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
-    height: 90px;
+    padding: 70px 20px;
+    height: 120px;
     width: 100%;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
 }
 
 #logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 1.4em;
-    letter-spacing: 2px;
+    font-size: 1.9em;
     text-transform: uppercase;
-    color: var(--cor05); /* Texto branco para destacar no fundo escuro */
-}
-
-#logo::after {
-    content: '.';
-    color: var(--cor04);
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor03);
 }
 
 #menu ul {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     list-style: none;
-    align-items: center;
+    padding: 50px;
 }
 
-#menu ul img {
-    width: 22px;
-    height: 22px;
-    filter: invert(1); /* Garante que o ícone do carrinho fique branco */
+#menu a:link,
+#menu a:visited {
+    color: #7a650e;
+    text-decoration: none;
+    font-size: 1.9em;
+    text-transform: lowercase;
 }
 
 #menu a:link,
@@ -87,18 +76,24 @@ body {
     font-size: 0.9em;
     text-transform: uppercase;
     text-decoration: none;
-    color: #94a3b8; /* Cinza claro legível */
+    color: #94a3b8; 
 }
 
-#menu a:hover,
+#menu a:hover {
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+
 #menu a:active {
-    font-size: 0.9em; /* Mantém o tamanho idêntico para o menu não tremer */
-    color: var(--cor04); /* Vermelho no hover */
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--cor02);
 }
-
-/* ==========================================================================
-   3. ESTILIZAÇÃO DO FORMULÁRIO (LOGIN / CADASTRO)
-   ========================================================================== */
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -108,14 +103,14 @@ h1 {
     text-align: center;
 }
 
-/* Centraliza e estiliza a caixinha do formulário */
+
 #login {
     background-color: var(--cor05);
     padding: 35px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     width: 100%;
-    max-width: 400px; /* Tamanho perfeito para telas de PC e celular */
+    max-width: 400px; 
     margin-bottom: 50px;
 }
 
@@ -130,7 +125,7 @@ label {
 }
 
 input {
-    width: 100%; /* Ocupa toda a largura interna do card de login */
+    width: 100%; 
     height: 44px;
     padding: 0 15px;
     margin-top: 6px;
@@ -167,12 +162,10 @@ button {
 }
 
 button:hover {
-    background-color: var(--cor04); /* Botão fica vermelho ao passar o mouse */
+    background-color: var(--cor04); 
 }
 
-/* ==========================================================================
-   4. RODAPÉ
-   ========================================================================== */
+
 #rodape {
     width: 100%;
     height: auto;

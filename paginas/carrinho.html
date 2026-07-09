@@ -4,61 +4,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VELOCIDADE | OFICINA TÉCNICA</title>
+    <title>Projeto Minha Loja Virtual</title>
 
-    <link rel="stylesheet" href="/css/style_carrinho.css">
-    
-    
-    <script src="/js/carrinho.js" defer></script>
-
+    <link rel="stylesheet" href="../css/style-carrinho.css">
 </head>
 
 <body>
+
     <main id="geral">
+
         <header id="cabecalho">
             <div id="logo">
-                VELOCIDADE | OFICINA TÉCNICA
+                SuaLoja
             </div>
 
             <nav id="menu">
                 <ul>
-                    <li><a href="../index.html">Produtos</a></li>
-                    <li><a href="../paginas/cadastro.html">Cadastro</a></li>
-                    <li><a href="../paginas/sobre.html">Sobre</a></li>
-                    <li><a href="../paginas/login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li>
-                        <a href="../paginas/carrinho.html">
-                            <img src="/imagens/icone_carrinho.png" alt="icone_carrinho">
+                        <a href="carrinho.html">
+                            <img src="../imagens/icones/carrinho.png" alt="Carrinho">
                         </a>
                     </li>
                 </ul>
             </nav>
-
         </header>
-            
-        <div id="carrinho">
-            <h1>🛒 Carrinho</h1>
-        
-            <ul id="lista-carrinho">
-                <!-- Os produtos serão adicionados aqui pelo JavaScript -->
-            </ul>
-        
-            <p>
-                <strong>Total:</strong>
-                 <span id="total">R$ 0,00</span>
-           </p>
-        
-            <button id="finalizar">Finalizar Pedido</button>
-        </div>
 
+        <section id="pesquisa">
+            <h3>Cadastro Pessoa</h3>
+        </section>
 
-        
+        <section id="carrinho">
+
+            <section id="itens-carrinho">
+
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Torno de Bancada (Morsa de Ferro).png" alt="Torno de Bancada (Morsa de Ferro)">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Torno de Bancada (Morsa de Ferro)
+                        </div>
+
+                        <div class="valores">
+                            <p>R$ 292,34</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 292,34</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/HEXX PREMIUM SYNT 5W30.png" alt="HEXX PREMIUM SYNT 5W30">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            HEXX PREMIUM SYNT 5W30
+                        </div>
+
+                        <div class="valores">
+                            <p> 46,55</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 46,55</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Macaco Hidráulico Tipo Jacaré.png" alt="Macaco Hidráulico Tipo Jacaré">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Macaco Hidráulico Tipo Jacaré
+                        </div>
+
+                        <div class="valores">
+                            <p> 1.491,18</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 1.491,18</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Carrinho de Ferramentas de Rodinha (Gabinete).png" alt="HEXX PREMIUM SYNT 5W30">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Carrinho de Ferramentas de Rodinha (Gabinete)
+                        </div>
+
+                        <div class="valores">
+                            <p>909,90</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$909,90</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Disco de Freio de Alta Performance.png" alt="Disco de Freio de Alta Performance">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Disco de Freio de Alta Performance
+                        </div>
+
+                        <div class="valores">
+                            <p> 290,00</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 290,00</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Chave de Impacto Pneumática (Pistola de Ar).png" alt="Chave de Impacto Pneumática (Pistola de Ar)">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Chave de Impacto Pneumática (Pistola de Ar)
+                        </div>
+
+                        <div class="valores">
+                            <p> 715,87</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 715,87</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Scanner de Diagnóstico Automotivo OBD2.png" alt="Scanner de Diagnóstico Automotivo OBD2">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Scanner de Diagnóstico Automotivo OBD2
+                        </div>
+
+                        <div class="valores">
+                            <p> 159,00</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 159,00</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Painel de Ferramentas Perfurado.png" alt="Painel de Ferramentas Perfurado.png">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Painel de Ferramentas Perfurado.png
+                        </div>
+
+                        <div class="valores">
+                            <p> 339,41</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 339,41</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Óculos de Proteção.png" alt="Óculos de Proteção">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Óculos de Proteção
+                        </div>
+
+                        <div class="valores">
+                            <p> 21,70</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 21,70</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Vela de ignição.png" alt="Vela de ignição">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Vela de ignição
+                        </div>
+
+                        <div class="valores">
+                            <p> 98,99</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 98,99</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Elevador Automotivo Hidráulico.png" alt="Elevador Automotivo Hidráulico">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Elevador Automotivo Hidráulico
+                        </div>
+
+                        <div class="valores">
+                            <p> 8.899,90</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 8.899,90</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Amortecedor de Suspensão Coilover 40.png" alt="Amortecedor de Suspensão Coilover 40">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Amortecedor de Suspensão Coilover 40
+                        </div>
+
+                        <div class="valores">
+                            <p> 4.665,57</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 4.665,57</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Bateria Automotiva Duran.png" alt="Bateria Automotiva Duran">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Bateria Automotiva Duran
+                        </div>
+
+                        <div class="valores">
+                            <p>643,08</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 643,08</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Filtro Ar Esportivo Cônico Duplo.png" alt="Filtro Ar Esportivo Cônico Duplo">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Filtro Ar Esportivo Cônico Duplo
+                        </div>
+
+                        <div class="valores">
+                            <p> 133,00</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 133,00</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="item">
+                    <div class="img-item">
+                        <img src="/imagens/Jogo de Chaves de Boca e Estrela (Chaves Combinadas).png" alt="Jogo de Chaves de Boca e Estrela (Chaves Combinadas)">
+                    </div>
+
+                    <div id="descricoes-itens">
+                        <div class="descricao">
+                            Jogo de Chaves de Boca e Estrela (Chaves Combinadas)
+                        </div>
+
+                        <div class="valores">
+                            <p> 140,90</p>
+
+                            <div class="input-quantidade">
+                                <input type="number" name="quant01" id="quant01" class="input-item" value="1">
+                            </div>
+
+                            <p>R$ 140,90</p>
+
+                            <div class="img-remover">
+                                <img src="../imagens/icones/remover.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+            <div id="valores-carrinho">
+
+                <div id="div-cep">
+                    <h2 class="titulo-valores-carrinho">CEP</h2>
+
+                    <div id="input-cep">
+                        <input type="text" name="input-cep" id="input-cep" class="input-cep">
+                    </div>
+                </div>
+
+                <div id="div-calc-valor">
+                    <h2 class="titulo-valores-carrinho">Valor Total</h2>
+                    <p id="valor-total" class="valor">R$ 100,00</p>
+
+                    <h2 class="titulo-valores-carrinho">Valor Frete</h2>
+                    <p id="valor-frete" class="valor">R$ 10,00</p>
+                </div>
+
+                <div id="div-calc-valor">
+                    <h2 class="titulo-valores-carrinho">Total a Pagar</h2>
+                    <p id="valor-pagar" class="valor">R$ 100,00</p>
+                </div>
+
+                <button id="btn-continuar" class="btn-carrinho">
+                    Continuar Compra
+                </button>
+
+                <button id="btn-finalizar" class="btn-carrinho">
+                    Finalizar Compra
+                </button>
+
+            </div>
+
+        </section>
+
         <footer id="rodape">
-            <h2>&copy 20026 VELOCIDADE | Oficina Técnica Todos os direitos reservados</h2>
-            <p>Formas de pagamento: Dinheiro, PIX, Cartão de débito e crédito.</p>
+            <h2>&copy; 2026 SuaLoja S.A. Todos os direitos reservados</h2>
+            <p>Formas de pagamento: Pix, Cartões de Débito e Crédito</p>
         </footer>
 
-      
     </main>
 
 </body>
