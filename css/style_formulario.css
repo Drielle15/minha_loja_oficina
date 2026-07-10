@@ -80,11 +80,7 @@ body {
 }
 
 #menu a:hover {
-    font-size: 1.6em;
-    text-transform: lowercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    color: var(--cor02);
+    color: var(--cor05);
 }
 
 #menu a:active {
@@ -93,6 +89,11 @@ body {
     letter-spacing: 2px;
     text-decoration: none;
     color: var(--cor02);
+}
+
+.carrinho {
+    width: 32px;
+    height: 32px;
 }
 h1 {
     font-family: 'Montserrat', sans-serif;
