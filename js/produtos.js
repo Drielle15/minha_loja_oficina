@@ -1,41 +1,149 @@
-//IMPORTANDO OS PRODUTOS DO ARQUIVO carrinho_js
+//IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
 import { produtos } from './lista_produtos.js'
 
-//PEGANDO ELEMENTOS DO DOM
-const sectionCards = document.querySelector('#cards')
-//CARREGANDO OS CARDS
+
+/*PEGANDO ELEMNTOR DO DOM*/
+const sectionCards= document.querySelector('#cards')
+
+//CARREGAMDO OS CARDS
 const listaProdutos = () => {
 
-    sectionCards.innerHTML =''
 
-    produtos.forEach((elem, i)=>{
-    const divCard = document.createElement('div')
-    divCard.setAttribute('class' , 'card')
+ 
+}
+//CHAMANDO A FUNÇÃO LISTAPRODUTOS
+       listaProdutos()
 
-    const imgCard = document.createElement('img')
-    imgCard.setAttribute('src', elem.caminho_imagem)
-    imgCard.setAttribute('alt', elem.discricao_produto)
+//MONTANDO OS MENUS SEÇÕES
+   const menuSecoes = () => {
+       const mapSecoes = new Map()
+//PERCORRENDO O ARRAY PRODUTO
+       produtos.forEach((elem) => {
+//SELECIONANDO AS SEÇÕES
+          mapSecoes.set(elem.id_secao,elem)
+       })
 
-    const pCard = document.createElement('p')
-    pCard.innerHTML = elem.descricao_produto
+//CONVERTENDO MAP EM ARRAY
+    const secoesFiltradas = Array.from(mapSecoes.values())
 
-    const h2Card = document.createElement('h2')
-    h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.',',')}`
+//RETORNANDO O ARRAY SELECIONADO
+     return secoesFiltradas
+   }
+
+//FUNÇÃO PARA INSERIS OS MENUS NA LISTA
+   const carregaSecoes = () =>{
+
+//PEGANDO O ELEMNTO UL MENU-SEÇÕES DO DOM
+    const ulMenuSecoes = document.querySelector('#menu-secoes')
+
+//LIMPANDO O ELEMNTO DO DOM
+    ulMenuSecoes.innerHTML =''
+     
+// Criando a opção "Todos"
+const liTodos = document.createElement('li');
+
+const aTodos = document.createElement('a');
+aTodos.setAttribute('href', '#');
+aTodos.setAttribute('class', 'lnk-secao');
+aTodos.innerHTML = 'Todos';
+
+aTodos.addEventListener('click', () => {
+    montaCards(produtos); // mostra todos os produtos
+});
+
+liTodos.appendChild(aTodos);
+ulMenuSecoes.appendChild(liTodos);
+
+
+//CHAMANDO A FUNÇÃO MENUSEÇÕES E PERCORRENDO O ARRAY DE SEÇÕES JA SELECIONADAS
+   menuSecoes().forEach((elem,i) =>{
+
+//CRIANDO O ELEMENTO LI
+  const liMenu = document.createElement('li')
+ 
+//CRIANDO O ELEMENTO A ATRIBUINDO O NOME DA SEÇÃO
+    const aMenu = document.createElement('a')
+    aMenu.setAttribute('href', '#')
+    aMenu.setAttribute('class', 'lnk-secao')
+    aMenu.innerHTML = elem.secao
+
+    aMenu.addEventListener('click',() =>{
+        montaCards(filtroProdutos(elem.id_secao))
+    })
+
+//ADICIONANDO O ELEMNTO FILHO A NO LI
+    liMenu.appendChild(aMenu)
+
+//ADICIONANDO OP ELEMENTO FILHO LIMENU NO OBJETO DOM
+    ulMenuSecoes.appendChild(liMenu)
+
     
-    const btnCard = document.createElement('button')
-    btnCard.setAttribute('clas', 'btn-add')
-    btnCard.innerHTML = 'Adicionar'
+    const liTodos = document.createElement('li')
 
-    divCard.appendChild(imgCard)
-    divCard.appendChild(pCard)
-    divCard.appendChild(h2Card)
-    divCard.appendChild(btnCard)
-
-    sectionCards.appendChild(divCard)
-})
-
-
+    const aTodos = document.createElement('a')
+    
+    aTodos.href = "#"
+    aTodos.className = "lnk-secao"
+    aTodos.innerHTML = "Todos"
+    
+    aTodos.addEventListener("click",() =>{
+        montaCards(produtos)
+    })
+    liTodos.appendChild(aTodos)
+    ulMenuSecoes.appendChild(liTodos)
+  })
 }
 
-listaProdutos()
+
+carregaSecoes()
+
+//FUNÇÃO FILTRO PRODUTO
+const filtroProdutos = (idSecao) => {
+    return produtos.filter(elem => elem.id_secao === idSecao);
+}
+
+//FUNÇÃO MONTA CARDS
+const montaCards = (objProdutos) =>{
+
+    //LIMPANDO A SECTION CARDS
+    sectionCards.innerHTML = ''
+
+//PERCORRENDO O ARRAY DE objProdutos
+objProdutos.forEach((elem,i)=> {
+
+//CRIANDO O ELEMENTO DIV E DEFININDO O ATRIBUTO CARD
+        const divCard = document.createElement('div')
+        divCard.setAttribute('class','card')
+
+//CRIANDO O ELEMENTO IMG E DEFININDO OS ATRIBUTOS SRC E ALT OS VALORES DO CAMINHO DAS IMAGENS E A DESCRIÇÃO DOS PRODUTOS 
+        const imgCard=document.createElement('img')
+        imgCard.setAttribute('src',elem.caminho_imagem)
+        imgCard.setAttribute('alt',elem.descricao_produto)
+
+//CRIANDO O ELEMENTO P E ATRIBUINDO A DESCRIÇÃO DOS PRODUTOS 
+        const pCard = document.createElement('p')
+        pCard.innerHTML = elem.descricao_produto
+
+//CRIANDO O ELEMENTO H2 E A ATRIBUINDO O VALOR UNITÁRIO DEIXANDO EM DUAS CASAS DECIMAIS E SUBSTITUINDO PONTO POR VÍRGULA
+        const h2Card = document.createElement('h2')
+        h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).
+        toFixed (2).replace('.','.')}`
+
+//CRIANDO O ELEMNTO BUTTON E DEFININDO OS ATRIBUTOS CLASS E A DESCRIÇÃO ADICIONAR 
+        const btnCard = document.createElement('button')
+        btnCard.setAttribute('class', 'btn-add')
+        btnCard.innerHTML = 'Adicionar'
+
+//ADICIONANDO OS ELEMENTOS FILHOS AOS DIVCARD 
+        divCard.appendChild(imgCard)
+        divCard.appendChild(pCard)
+        divCard.appendChild(h2Card)
+        divCard.appendChild(btnCard)
+
+//ADICIONANDO O DIVCARD A SECTION CARDS
+        sectionCards.appendChild(divCard)
+
+
+})  
+}
 
