@@ -86,6 +86,23 @@ const filtroProdutos = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao);
 }
 
+
+//CAPTURANDO OS CARACTERES DO INPUT PESQUISA
+//PEGANDO O INPUT DO DOM 
+const inputPesquisa = document.querySelector('#pesquisa')
+
+inputPesquisa.addEventListener('input', (evt)=>{
+
+    //PEGANDO O VALOR DO INPUT E CONVERTENDO EM MINUSCULO
+    let txtInput = evt.target.value.toLowerCase()
+
+    //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUIDES
+    montaCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes(txtInput)))
+
+
+})
+
+
 //FUNÇÃO MONTA CARDS
 const montaCards = (objProdutos) =>{
 
@@ -118,6 +135,10 @@ objProdutos.forEach((elem,i)=> {
         btnCard.setAttribute('class', 'btn-add')
         btnCard.innerHTML = 'Adicionar'
 
+
+        btnCard.addEventListener('click', ()=>{
+            window.location.href = 'paginas/carrinho.html'
+        })
 //ADICIONANDO OS ELEMENTOS FILHOS AOS DIVCARD 
         divCard.appendChild(imgCard)
         divCard.appendChild(pCard)
@@ -130,4 +151,6 @@ objProdutos.forEach((elem,i)=> {
 
 })  
 }
+
+carregandoProdutos(0)
 

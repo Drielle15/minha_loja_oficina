@@ -70,7 +70,7 @@
     border-radius: 8px;
     padding: 10px;
     font-size: 1.4em;
-    color: var(--cor03);
+    color: var(--cor02);
 }
 
 #pesquisa input::placeholder {
