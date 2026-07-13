@@ -1,5 +1,5 @@
 
-@import url('css/style_estrutura_pagina.css');
+@import url('style_estrutura_pagina.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
 
 :root{
@@ -7,10 +7,6 @@
     --cor02: #0f172a;
     --cor03: #f1f5f9;
 }
-
-
-
-
 
 *{
     margin: 0;
@@ -23,15 +19,26 @@ body{
     background-color: var(--cor03);
 }
 
+
+
+#cabecalho {
+    background-color: var(--cor03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    height: 130px;
+    width: 100%;
+    color: var(--cor02);
+
+}
+
 #carrinho{
     width: 95%;
     margin: 30px auto;
     display: flex;
     gap: 20px;
 }
-
-
-
 
 
 #itens-carrinho{
@@ -95,8 +102,6 @@ body{
 }
 
 
-
-
 #valores-carrinho{
     width: 30%;
     background: white;
@@ -127,10 +132,6 @@ body{
     margin-bottom: 20px;
 }
 
-
-
-
-
 .btn-carrinho{
     width: 100%;
     height: 45px;
@@ -148,6 +149,18 @@ body{
     background: var(--cor02);
 }
 
+#rodape {
+    width: 100%;
+    height: 180px;
+    background-color: var(--cor02);
+    margin: 20px 0px;
+    padding: 10px;
+    color: var(--cor03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 

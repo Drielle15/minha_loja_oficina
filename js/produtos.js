@@ -1,5 +1,6 @@
 /*IMPORTANDO OS PRODUTOS DO ARQUIVO SCRIPT_CARRINHO*/
 import{produtos} from './lista_produtos.js'
+import{ addItem} from './carrinho.js'
 
 /*PEGANDO ELEMNTOR DO DOM*/
 const sectionCards= document.querySelector('#cards')
@@ -139,6 +140,8 @@ objProdutos.forEach((elem,i)=> {
         btnCard.addEventListener('click', ()=>{
             window.location.href = 'paginas/carrinho.html'
         })
+
+
 //ADICIONANDO OS ELEMENTOS FILHOS AOS DIVCARD 
         divCard.appendChild(imgCard)
         divCard.appendChild(pCard)
