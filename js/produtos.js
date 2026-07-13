@@ -1,6 +1,5 @@
-//IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
-import { produtos } from './lista_produtos.js'
-
+/*IMPORTANDO OS PRODUTOS DO ARQUIVO SCRIPT_CARRINHO*/
+import{produtos} from './lista_produtos.js'
 
 /*PEGANDO ELEMNTOR DO DOM*/
 const sectionCards= document.querySelector('#cards')
@@ -38,8 +37,8 @@ const listaProdutos = () => {
 
 //LIMPANDO O ELEMNTO DO DOM
     ulMenuSecoes.innerHTML =''
-     
-// Criando a opção "Todos"
+
+    // Criando a opção "Todos"
 const liTodos = document.createElement('li');
 
 const aTodos = document.createElement('a');
@@ -53,7 +52,6 @@ aTodos.addEventListener('click', () => {
 
 liTodos.appendChild(aTodos);
 ulMenuSecoes.appendChild(liTodos);
-
 
 //CHAMANDO A FUNÇÃO MENUSEÇÕES E PERCORRENDO O ARRAY DE SEÇÕES JA SELECIONADAS
    menuSecoes().forEach((elem,i) =>{
@@ -76,26 +74,12 @@ ulMenuSecoes.appendChild(liTodos);
 
 //ADICIONANDO OP ELEMENTO FILHO LIMENU NO OBJETO DOM
     ulMenuSecoes.appendChild(liMenu)
-
-    
-    const liTodos = document.createElement('li')
-
-    const aTodos = document.createElement('a')
-    
-    aTodos.href = "#"
-    aTodos.className = "lnk-secao"
-    aTodos.innerHTML = "Todos"
-    
-    aTodos.addEventListener("click",() =>{
-        montaCards(produtos)
-    })
-    liTodos.appendChild(aTodos)
-    ulMenuSecoes.appendChild(liTodos)
+   
   })
 }
 
-
 carregaSecoes()
+
 
 //FUNÇÃO FILTRO PRODUTO
 const filtroProdutos = (idSecao) => {
