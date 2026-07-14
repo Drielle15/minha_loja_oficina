@@ -111,7 +111,7 @@ const montaCards = (objProdutos) =>{
     sectionCards.innerHTML = ''
 
 //PERCORRENDO O ARRAY DE objProdutos
-objProdutos.forEach((elem,i)=> {
+objProdutos.forEach((elem, i)=> {
 
 //CRIANDO O ELEMENTO DIV E DEFININDO O ATRIBUTO CARD
         const divCard = document.createElement('div')
@@ -136,8 +136,8 @@ objProdutos.forEach((elem,i)=> {
         btnCard.setAttribute('class', 'btn-add')
         btnCard.innerHTML = 'Adicionar'
 
-
-        btnCard.addEventListener('click', ()=>{
+        btnCard.addEventListener('click', () => {
+            addItem(elem)
             window.location.href = 'paginas/carrinho.html'
         })
 
