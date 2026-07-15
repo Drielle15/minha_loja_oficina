@@ -41,7 +41,7 @@ const montaTelaCarrinho = ()=>{
         inputQuantidade.setAttribute('name', `quant${i}`)
         inputQuantidade.setAttribute('id', `quant${i}`)
         inputQuantidade.setAttribute('class', 'input-item')
-        inputQuantidade.setAttribute('value', 1)
+        inputQuantidade.setAttribute('value', elem.quantidade)
 
         divQuant.appendChild(inputQuantidade)
 
