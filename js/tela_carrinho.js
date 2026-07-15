@@ -1,10 +1,12 @@
 import { listItens } from "./carrinho.js"
-//MONTAR TELA CARRINHO
-const montaTelaCarrinho = (objListaItens)=>{
-    const sectionItensCarrinho = document.querySelector
-    ('#itens-carrinho')
 
-    objListaItens.forEach((elem, i) => {
+//MONTAR TELA CARRINHO
+const montaTelaCarrinho = ()=>{
+    const sectionItensCarrinho = document.querySelector('#itens-carrinho')
+
+    sectionItensCarrinho.innerHTML = ''
+
+    listItens().forEach((elem, i) => {
         const sectionItem = document.createElement('section')
         sectionItem.setAttribute('class', 'item')
 
@@ -65,4 +67,5 @@ const montaTelaCarrinho = (objListaItens)=>{
     })
 
 }
-montaTelaCarrinho(0)
+
+montaTelaCarrinho()
