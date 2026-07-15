@@ -16,9 +16,6 @@ const listaProdutos = () => {
     return produtos
 }
 
-
-
-
 //MONTANDO OS MENUS SEÇÕES
 const menuSecoes = () => {
     const mapSecoes = new Map()
@@ -105,9 +102,7 @@ inputPesquisa.addEventListener('input', (evt) => {
     //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUIDES
     montaCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes(txtInput)))
 
-
 })
-
 
 //FUNÇÃO MONTA CARDS
 const montaCards = (objProdutos) => {
@@ -155,7 +150,6 @@ const montaCards = (objProdutos) => {
 
         //ADICIONANDO O DIVCARD A SECTION CARDS
         sectionCards.appendChild(divCard)
-
 
     })
 }
