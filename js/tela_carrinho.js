@@ -1,82 +1,151 @@
-import { listItens, removeItem } from "./carrinho.js"
+import { listItens, removeItem, alterarQuantidade } from "./carrinho.js";
 
-//MONTAR TELA CARRINHO
-const montaTelaCarrinho = ()=>{
-    const sectionItensCarrinho = document.querySelector('#itens-carrinho')
+// MONTAR TELA CARRINHO
+const montaTelaCarrinho = () => {
 
-    sectionItensCarrinho.innerHTML = ''
+    const sectionItensCarrinho = document.querySelector('#itens-carrinho');
 
-    listItens().forEach((elem, i) => {
-        const sectionItem = document.createElement('section')
-        sectionItem.setAttribute('class', 'item')
+    sectionItensCarrinho.innerHTML = '';
 
-        const divImgItem = document.createElement('div')
-        divImgItem.setAttribute('class', 'img-item')
+    const itens = listItens() || [];
 
-        const imgItem = document.createElement('img')
-        imgItem.setAttribute('src', elem.caminho_imagem)
-        imgItem.setAttribute('alt', elem.descricao_produto)
+    itens.forEach((elem, i) => {
 
-        divImgItem.appendChild(imgItem)
+        const sectionItem = document.createElement('section');
+        sectionItem.setAttribute('class', 'item');
 
-        const divDescricaoItens = document.createElement('div')
-        divDescricaoItens.setAttribute('class', 'descricoes-itens')
+        // IMAGEM
+        const divImgItem = document.createElement('div');
+        divImgItem.setAttribute('class', 'img-item');
 
-        const divDescricao = document.createElement('div')
-        divDescricao.setAttribute('class', 'descricao')
-        divDescricao.innerHTML = elem.descricao_produto
+        const imgItem = document.createElement('img');
+        imgItem.setAttribute('src', elem.caminho_imagem);
+        imgItem.setAttribute('alt', elem.descricao_produto);
 
-        const divValores = document.createElement('div')
-        divValores.setAttribute('class', 'valores')
+        divImgItem.appendChild(imgItem);
 
-        const pItem = document.createElement('p')
-        pItem.innerHTML = `R$ ${parseFloat(elem. valor_unitario).
-        toFixed(2).replace('.',',')}`
+        // DESCRIÇÕES
+        const divDescricaoItens = document.createElement('div');
+        divDescricaoItens.setAttribute('class', 'descricoes-itens');
 
-        const divQuant = document.createElement('div')
-        divQuant.setAttribute('class', 'input-quantidade')
+        const divDescricao = document.createElement('div');
+        divDescricao.setAttribute('class', 'descricao');
+        divDescricao.innerHTML = elem.descricao_produto;
 
-        const inputQuantidade = document.createElement('input')
-        inputQuantidade.setAttribute('type', 'number')
-        inputQuantidade.setAttribute('name', `quant${i}`)
-        inputQuantidade.setAttribute('id', `quant${i}`)
-        inputQuantidade.setAttribute('class', 'input-item')
-        inputQuantidade.setAttribute('value', elem.quantidade)
+        // VALORES
+        const divValores = document.createElement('div');
+        divValores.setAttribute('class', 'valores');
 
-        divQuant.appendChild(inputQuantidade)
+        // PREÇO UNITÁRIO
+        const pItem = document.createElement('p');
+        pItem.innerHTML =
+            `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`;
 
-        const pCalc = document.createElement('p')
-        pCalc.innerHTML = `R$ ${elem.valor_unitario * 1}`
+        // INPUT QUANTIDADE
+        const divQuant = document.createElement('div');
+        divQuant.setAttribute('class', 'input-quantidade');
 
-        const imgRemover = document.createElement('img')
-        imgRemover.setAttribute('src', '../imagens/icones/remover.png')
-        imgRemover.setAttribute('alt', 'remover')
+        const inputQuantidade = document.createElement('input');
+        inputQuantidade.setAttribute('type', 'number');
+        inputQuantidade.setAttribute('name', `quant${i}`);
+        inputQuantidade.setAttribute('id', `quant${i}`);
+        inputQuantidade.setAttribute('class', 'input-item');
+        inputQuantidade.setAttribute('value', elem.quantidade);
+        inputQuantidade.setAttribute('min', '1');
+        inputQuantidade.setAttribute('step', '1');
+
+        inputQuantidade.addEventListener('change', (e) => {
+
+            let quantidade = parseInt(e.target.value);
+
+            if (isNaN(quantidade) || quantidade < 1) {
+                quantidade = 1;
+                e.target.value = 1;
+            }
+
+            alterarQuantidade(i, quantidade);
+
+            montaTelaCarrinho();
+
+        });
+
+        divQuant.appendChild(inputQuantidade);
+
+        // SUBTOTAL
+        const subtotal = elem.valor_unitario * elem.quantidade;
+
+        const pCalc = document.createElement('p');
+        pCalc.innerHTML =
+            `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+
+        // REMOVER
+        const imgRemover = document.createElement('img');
+        imgRemover.setAttribute('src', '../imagens/icones/remover.png');
+        imgRemover.setAttribute('alt', 'remover');
 
         imgRemover.addEventListener('click', () => {
+
             if (confirm(`Tem certeza que deseja remover ${elem.descricao_produto} do carrinho?`)) {
+
                 removerItemTela(i);
+
             }
-        })
 
-        divValores.appendChild(pItem)
-        divValores.appendChild(divQuant)
-        divValores.appendChild(pCalc)
-        divValores.appendChild(imgRemover)
+        });
 
-        divDescricaoItens.appendChild(divDescricao)
-        divDescricaoItens.appendChild(divValores)
+        divValores.appendChild(pItem);
+        divValores.appendChild(divQuant);
+        divValores.appendChild(pCalc);
+        divValores.appendChild(imgRemover);
 
-        sectionItem.appendChild(divImgItem)
-        sectionItem.appendChild(divDescricaoItens)
+        divDescricaoItens.appendChild(divDescricao);
+        divDescricaoItens.appendChild(divValores);
 
-        sectionItensCarrinho.appendChild(sectionItem)
-    })
+        sectionItem.appendChild(divImgItem);
+        sectionItem.appendChild(divDescricaoItens);
 
-}
+        sectionItensCarrinho.appendChild(sectionItem);
 
-montaTelaCarrinho()
-const removerItemTela = (pos)=>{
-    removeItem(pos)
+    });
 
-    montaTelaCarrinho()
-}
+    atualizarTotais();
+
+};
+
+// ATUALIZAR VALORES
+const atualizarTotais = () => {
+
+    const itens = listItens() || [];
+
+    let total = 0;
+
+    itens.forEach(item => {
+
+        total += item.valor_unitario * item.quantidade;
+
+    });
+
+    const frete = 10;
+
+    document.querySelector('#valor-total').innerHTML =
+        `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+    document.querySelector('#valor-frete').innerHTML =
+        `R$ ${frete.toFixed(2).replace('.', ',')}`;
+
+    document.querySelector('#valor-pagar').innerHTML =
+        `R$ ${(total + frete).toFixed(2).replace('.', ',')}`;
+
+};
+
+// REMOVER ITEM
+const removerItemTela = (pos) => {
+
+    removeItem(pos);
+
+    montaTelaCarrinho();
+
+};
+
+// INICIAR
+montaTelaCarrinho();

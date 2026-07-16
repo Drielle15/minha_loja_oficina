@@ -18,6 +18,9 @@ body{
     background-color: var(--cor03);
 }
 
+
+/* CABEÇALHO */
+
 #cabecalho{
     background-color: var(--cor02);
     display: flex;
@@ -26,18 +29,23 @@ body{
     padding: 0 40px;
     height: 70px;
     width: 100%;
-    color: var(--cor02);
+    color: white;
 }
 
+
 #cabecalho a{
-    color: var(--cor02);
+    color: white;
     text-decoration: none;
     transition: .3s;
 }
 
+
 #cabecalho a:hover{
     color: #64748b;
 }
+
+
+/* MENU */
 
 #menu ul{
     display: flex;
@@ -46,17 +54,27 @@ body{
     gap: 30px;
 }
 
+
 #menu ul li a{
-    color: var(--cor02);
+    color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
 }
 
+
+#menu ul li a:hover{
+    color: #64748b;
+}
+
+
 #menu ul li img{
     width: 28px;
     height: 28px;
 }
+
+
+/* CARRINHO */
 
 #carrinho{
     width: 95%;
@@ -65,9 +83,11 @@ body{
     gap: 20px;
 }
 
+
 #itens-carrinho{
     width: 70%;
 }
+
 
 .item{
     display: flex;
@@ -79,9 +99,11 @@ body{
     margin-bottom: 20px;
 }
 
+
 .img-item{
     width: 120px;
 }
+
 
 .img-item img{
     width: 100px;
@@ -89,9 +111,11 @@ body{
     object-fit: contain;
 }
 
+
 #descricoes-itens{
     width: 100%;
 }
+
 
 .descricao{
     font-size: 18px;
@@ -100,17 +124,20 @@ body{
     margin-bottom: 15px;
 }
 
+
 .valores{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+
 .valores p{
     font-size: 18px;
     color: var(--cor01);
     font-weight: bold;
 }
+
 
 .input-item{
     width: 60px;
@@ -120,10 +147,15 @@ body{
     border-radius: 5px;
 }
 
+
 .img-remover img{
     width: 30px;
     cursor: pointer;
 }
+
+
+
+/* RESUMO DO CARRINHO */
 
 #valores-carrinho{
     width: 30%;
@@ -134,17 +166,20 @@ body{
     height: fit-content;
 }
 
+
 .titulo-valores-carrinho{
     color: var(--cor02);
     font-size: 20px;
     margin-bottom: 10px;
 }
 
+
 .valor{
     color: var(--cor01);
     font-size: 18px;
     margin-bottom: 20px;
 }
+
 
 .input-cep{
     width: 100%;
@@ -154,6 +189,10 @@ body{
     padding-left: 10px;
     margin-bottom: 20px;
 }
+
+
+
+/* BOTÕES */
 
 .btn-carrinho{
     width: 100%;
@@ -168,9 +207,14 @@ body{
     transition: .3s;
 }
 
+
 .btn-carrinho:hover{
     background: var(--cor02);
 }
+
+
+
+/* RODAPÉ */
 
 #rodape{
     width: 100%;
@@ -185,31 +229,40 @@ body{
     justify-content: center;
 }
 
+
+
+/* RESPONSIVO */
+
 @media(max-width:900px){
 
     #carrinho{
         flex-direction: column;
     }
 
+
     #itens-carrinho,
     #valores-carrinho{
         width: 100%;
     }
+
 
     .item{
         flex-direction: column;
         text-align: center;
     }
 
+
     .valores{
         flex-direction: column;
         gap: 10px;
     }
 
+
     #cabecalho{
         justify-content: center;
         padding: 0 20px;
     }
+
 
     #menu ul{
         gap: 15px;
@@ -217,7 +270,9 @@ body{
         justify-content: center;
     }
 
+
     #menu ul li a{
         font-size: 16px;
     }
+
 }
