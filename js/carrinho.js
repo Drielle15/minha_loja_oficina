@@ -17,42 +17,44 @@ const item = (objProduto) => {
 // FUNÇÃO PARA ADICIONAR ITEM
 const addItem = (objItem) => {
 
-   // Verifica se o produto já existe no carrinho
+   // VERIFICA SE O PRODUTO JÁ EXISTE
     const produtoExistente = itensCarrinho.find(
         produto => produto.id_Produto === objItem.id_produto
     );
- // Se já existir, aumenta apenas a quantidade
+ //  // SE JÁ EXISTIR, AUMENTA A QUANTIDADE
     if (produtoExistente) {
         produtoExistente.quantidade++;
- // Caso contrário, adiciona um novo produto ao carrinho
+  // SE NÃO EXISTIR, ADICIONA UM NOVO PRODUTO
     } else {
         itensCarrinho.push(item(objItem));
     }
-// Atualiza os dados do carrinho na sessionStorage
+// // SALVA O CARRINHO ATUALIZADO
     sessionStorage.setItem(
         "carrinhoSessao",
         JSON.stringify(itensCarrinho)
     );
 };
 
-// LISTAR ITENS
+// MOSTRA OS ITENS DO CARRINHO
 const listItens = () => {
 
     return JSON.parse(sessionStorage.getItem("carrinhoSessao")) || [];
 
 };
 
-// Converte o valor digitado para inteiro
+// MUDA A QUANTIDADE
 const alterarQuantidade = (pos, quantidade) => {
 
     quantidade = parseInt(quantidade);
-// Valida para aceitar somente valores inteiros positivos
+
+    // TRANSFORMA EM NÚMERO
     if (isNaN(quantidade) || quantidade < 1) {
         quantidade = 1;
     }
-// Atualiza a quantidade do produto selecionado
+    // MUDA A QUANTIDADE DO PRODUTO
     itensCarrinho[pos].quantidade = quantidade;
-// Salva as alterações no carrinho
+
+    // SALVA O CARRINHO
     sessionStorage.setItem(
         "carrinhoSessao",
         JSON.stringify(itensCarrinho)
