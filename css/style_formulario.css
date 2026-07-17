@@ -78,6 +78,9 @@ body {
     text-decoration: none;
     color: #94a3b8; 
 }
+#menu img{
+    filter: invert(1);
+}
 
 #menu a:hover {
     color: var(--cor05);

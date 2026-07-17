@@ -85,7 +85,7 @@ const montaTelaCarrinho = () => {
 
         // REMOVER
         const imgRemover = document.createElement('img');
-        imgRemover.setAttribute('src', '../imagens/icones/remover.png');
+        imgRemover.setAttribute('src', '../imagens/remover.png');
         imgRemover.setAttribute('alt', 'remover');
 
         imgRemover.addEventListener('click', () => {

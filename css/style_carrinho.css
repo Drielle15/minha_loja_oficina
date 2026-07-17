@@ -17,7 +17,7 @@
 body{
     background-color: var(--cor03);
 }
-
+ 
 
 /* CABEÇALHO */
 
@@ -26,10 +26,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-    height: 70px;
+    padding: 70px 20px;
+    height: 120px;
     width: 100%;
-    color: white;
+
 }
 
 
@@ -44,6 +44,13 @@ body{
     color: #64748b;
 }
 
+#logo {
+    font-size: 1.9em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor03);
+}
 
 /* MENU */
 
@@ -73,6 +80,30 @@ body{
     height: 28px;
 }
 
+#menu a:link,
+#menu a:visited {
+    font-size: 1.4em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #94a3b8; 
+}
+
+#menu a:hover {
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--cor05);
+}
+
+#menu a:active {
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--cor02);
+}
 
 /* CARRINHO */
 
@@ -80,7 +111,8 @@ body{
     width: 95%;
     margin: 30px auto;
     display: flex;
-    gap: 20px;
+    gap:20px;
+    
 }
 
 
@@ -149,8 +181,10 @@ body{
 
 
 .img-remover img{
-    width: 30px;
+    width: 29px;
     cursor: pointer;
+    padding-left: 10px;
+    
 }
 
 
@@ -190,7 +224,11 @@ body{
     margin-bottom: 20px;
 }
 
-
+.valores img{
+    width: 15px;
+    height: 18  px;
+    cursor: pointer;
+}
 
 /* BOTÕES */
 
@@ -212,7 +250,9 @@ body{
     background: var(--cor02);
 }
 
-
+#menu img{
+    filter: invert(1);
+}
 
 /* RODAPÉ */
 
